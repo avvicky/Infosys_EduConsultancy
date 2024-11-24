@@ -1,2 +1,8 @@
-# Infosys_EduConsultancy
-A web app for educational planning, with role-based dashboards, secure user authentication, payment management, and AI-powered blog content. Built with Spring Boot, JPA, Spring Security and React.js.
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
