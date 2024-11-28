@@ -4,7 +4,7 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
-import Navbar from './Navbar';
+import Navbar from '../components/Navbar';
 
 export default function About() {
 

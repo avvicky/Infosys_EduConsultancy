@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './Navbar';
+import Navbar from '../components/Navbar';
 
 
 // Sample blog data (replace with dynamic data as needed)
