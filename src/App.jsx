@@ -13,12 +13,15 @@ import UserPage from "./pages/UserPage";
 import ParentsPage from "./pages/ParentsPage";
 import HeroComponent from "./components/HeroComponent";
 import Products from "./pages/Products";
-import About from "./pages/About";
-import Blogs from "./pages/Blogs";
+import Blogs from "./pages/Blogs"
+import About from "./pages/About"
+
+// import
 
 function App() {
   return (
     <Router>
+      <div className='bg-custom-image  bg-center bg-no-repeat aspect-[16/9] min-h-[100vh] w-full'>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -26,7 +29,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<HeroComponent />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About/>} />
         <Route
           path="/profile"
           element={
@@ -61,6 +64,7 @@ function App() {
         />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
+      </div>
     </Router>
     //   <>
     //     <Router>
