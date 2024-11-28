@@ -13,19 +13,23 @@ import UserPage from "./pages/UserPage";
 import ParentsPage from "./pages/ParentsPage";
 import HeroComponent from "./components/HeroComponent";
 import Products from "./pages/Products";
+import Blogs from "./pages/Blogs"
+import About from "./pages/About"
+
 // import
 
 function App() {
   return (
     <Router>
+      <div className='bg-gradient-to-r from-blue-500/75 to-purple-500/75  min-h-[100vh]'>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<HeroComponent />} />
-        <Route path="/products" element={<HeroComponent />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<HeroComponent />} />
-        <Route path="/blogs" element={<HeroComponent />} />
-        <Route path="/about" element={<HeroComponent />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/about" element={<About/>} />
         <Route
           path="/profile"
           element={
@@ -60,6 +64,7 @@ function App() {
         />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
+      </div>
     </Router>
     //   <>
     //     <Router>

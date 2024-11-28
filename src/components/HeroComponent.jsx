@@ -12,6 +12,7 @@ export default function HeroComponent() {
 
   return (
     <>
+    <Navbar/>
       <section className="relative  min-h-[90vh] flex items-center">
         <div className="container mx-auto text-center px-4 ">
           <h1 className="text-5xl font-bold mb-4">
