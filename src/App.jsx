@@ -21,7 +21,7 @@ import About from "./pages/About"
 function App() {
   return (
     <Router>
-      <div className='bg-gradient-to-r from-blue-500/75 to-purple-500/75  min-h-[100vh]'>
+      <div className='bg-custom-image  bg-center bg-no-repeat aspect-[16/9] min-h-[100vh] w-full'>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

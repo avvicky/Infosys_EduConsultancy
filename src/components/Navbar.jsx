@@ -16,12 +16,12 @@ export default function Navbar() {
   };
 
   return (
-    <div className="min-h-[10vh] border-none bg-transparent px-4 py-2 grid grid-cols-3 gap-4 content-center">
-      <div className="italic text-black	font-great-vibes text-4xl px-5 font-semibold content-center">
+    <div className="min-h-[10vh] border-none inset-0 bg-gradient-to-b from-black/40 to-black/0 px-4 py-2 grid grid-cols-3 gap-4 content-center">
+      <div className="italic text-title	font-great-vibes text-4xl px-5 font-semibold content-center">
         Edu_Consultancy
       </div>
 
-      <div className="col-span-2 flex justify-end text-black">
+      <div className="col-span-2 flex justify-end text-nav">
         <Link className="px-4 py-3" to="/">
           Home
         </Link>
