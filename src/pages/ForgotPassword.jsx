@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {
   return (
@@ -13,12 +13,15 @@ const ForgotPassword = () => {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-black opacity-40"></div>
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-white px-8 text-center">
+          <div className="absolute inset-0 flex flex-col justify-center items-center  px-8 text-center">
             <h2 className="text-3xl font-bold">Reset Password</h2>
             <p className="mt-2">
               Enter your email to receive a password reset link.
             </p>
-            <Link to="/login" className="mt-6 px-6 py-2 bg-white text-purple-600 rounded-md font-semibold hover:bg-gray-100">
+            <Link
+              to="/login"
+              className="mt-6 px-6 py-2 bg-white text-purple-600 rounded-md font-semibold hover:bg-gray-100"
+            >
               Back to Login
             </Link>
           </div>
@@ -26,14 +29,20 @@ const ForgotPassword = () => {
 
         {/* Right Side - Forgot Password Form */}
         <div className="w-1/2 p-8">
-          <h2 className="text-4xl font-semibold text-purple-600 mb-4">Forgot Password</h2>
+          <h2 className="text-4xl font-semibold text-purple-600 mb-4">
+            Forgot Password
+          </h2>
           <form className="space-y-4">
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500" required
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+              required
             />
-            <button type="submit" className="w-full px-4 py-2 bg-purple-600 text-white rounded-md font-semibold hover:bg-purple-700">
+            <button
+              type="submit"
+              className="w-full px-4 py-2 bg-purple-600  rounded-md font-semibold hover:bg-purple-700"
+            >
               Send Reset Link
             </button>
           </form>

@@ -13,7 +13,8 @@ import UserPage from "./pages/UserPage";
 import ParentsPage from "./pages/ParentsPage";
 import HeroComponent from "./components/HeroComponent";
 import Products from "./pages/Products";
-// import
+import About from "./pages/About";
+import Blogs from "./pages/Blogs";
 
 function App() {
   return (
@@ -22,10 +23,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<HeroComponent />} />
-        <Route path="/products" element={<HeroComponent />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<HeroComponent />} />
-        <Route path="/blogs" element={<HeroComponent />} />
-        <Route path="/about" element={<HeroComponent />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/about" element={<About />} />
         <Route
           path="/profile"
           element={

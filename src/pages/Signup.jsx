@@ -160,7 +160,7 @@ const Signup = () => {
             </div>
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-purple-600 text-white rounded-md font-semibold hover:bg-purple-700"
+              className="w-full px-4 py-2 bg-purple-600  rounded-md font-semibold hover:bg-purple-700"
             >
               Register
             </button>
@@ -176,7 +176,7 @@ const Signup = () => {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-black opacity-40"></div>
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-white px-8 text-center">
+          <div className="absolute inset-0 flex flex-col justify-center items-center  px-8 text-center">
             <h2 className="text-3xl font-bold">Reconnect</h2>
             <p className="mt-2">
               Welcome back! Log in to continue your journey with us
@@ -199,7 +199,7 @@ const Signup = () => {
             <p className="mt-4">Your account has been created successfully.</p>
             <button
               onClick={() => setShowPopup(false)}
-              className="mt-6 px-4 py-2 bg-purple-600 text-white rounded-md font-semibold hover:bg-purple-700"
+              className="mt-6 px-4 py-2 bg-purple-600  rounded-md font-semibold hover:bg-purple-700"
             >
               Close
             </button>
