@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-import CloseIcon from '@mui/icons-material/Close';
+import { Close } from '@mui/icons-material';
 
 const blogData = [
   {
@@ -25,15 +25,22 @@ const blogData = [
 
 export default function Blogs() {
   const [activeBlog, setActiveBlog] = useState(null);
+  const [isCreateBlogOpen, setCreateBlogOpen] = useState(false);
 
-  // Open blog popup
   const handleReadMore = (blog) => {
     setActiveBlog(blog);
   };
 
-  // Close blog popup
   const handleClosePopup = () => {
     setActiveBlog(null);
+  };
+
+  const handleOpenCreateBlog = () => {
+    setCreateBlogOpen(true);
+  };
+
+  const handleCloseCreateBlog = () => {
+    setCreateBlogOpen(false);
   };
 
   return (
@@ -65,7 +72,7 @@ export default function Blogs() {
         </div>
       </section>
 
-      {/* Popup Modal */}
+      {/* Popup Modal for Blog Details */}
       {activeBlog && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-xl relative">
@@ -73,7 +80,7 @@ export default function Blogs() {
               onClick={handleClosePopup}
               className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
             >
-              <span className="material-icons"><CloseIcon/></span>
+              <span className="material-icons">close</span>
             </button>
             <h3 className="text-2xl font-semibold mb-4 text-gray-800">{activeBlog.title}</h3>
             <img
@@ -82,9 +89,76 @@ export default function Blogs() {
               className="w-full h-64 object-cover rounded-md mb-4"
             />
             <p className="text-gray-600">
-              {/* You can replace this with the full blog content */}
               This is a detailed view of the blog. Replace this placeholder with the full content of the blog.
             </p>
+          </div>
+        </div>
+      )}
+
+      {/* Footer with "Create Your Blog" Button */}
+      <footer className="py-6 text-center">
+        <button
+          className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600"
+          onClick={handleOpenCreateBlog}
+        >
+          Create Your Blog +
+        </button>
+      </footer>
+
+      {/* Popup Modal for Blog Creation */}
+      {isCreateBlogOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-xl relative">
+            <button
+              onClick={handleCloseCreateBlog}
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            >
+              <span className="material-icons"><Close /></span>
+            </button>
+            <h3 className="text-2xl font-semibold mb-4 text-gray-800">Create Your Blog</h3>
+            <form>
+              <div className="mb-4">
+                <label className="block text-gray-700 mb-2">Title</label>
+                <input
+                  type="text"
+                  required
+                  className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter blog title"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700 mb-2">Content</label>
+                <input
+                  type="text"
+                  required
+                  className="w-full border rounded-lg h-50 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Write your blog content here..."
+                  rows="6"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700 mb-2">Attach Files</label>
+                <input
+                  type="file"
+                  className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  onClick={handleCloseCreateBlog}
+                  className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 mr-2"
+                >
+                  Discard
+                </button>
+                <button
+                  type="submit"
+                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}
