@@ -15,13 +15,14 @@ import HeroComponent from "./components/HeroComponent";
 import Products from "./pages/Products";
 import Blogs from "./pages/Blogs"
 import About from "./pages/About"
+import Feedback from "./pages/Feedback";
 
 // import
 
 function App() {
   return (
     <Router>
-      <div className='bg-custom-image  bg-center bg-no-repeat aspect-[16/9] min-h-[100vh] w-full'>
+      <div className='bg-custom-image  bg-center bg-no-repeat  min-h-[100vh] w-full'>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -30,6 +31,8 @@ function App() {
         <Route path="/contact" element={<HeroComponent />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/about" element={<About/>} />
+        <Route path="/feedback" element={<Feedback/>} />
+
         <Route
           path="/profile"
           element={

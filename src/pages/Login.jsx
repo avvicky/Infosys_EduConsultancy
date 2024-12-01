@@ -34,10 +34,10 @@ const Login = () => {
         const decoded = jwtDecode(token);
         if (decoded.roles[0] == "ADMIN") {
           navigate("/admin");
-        } else if (decoded.roles[0] == "USER") {
-          navigate("/user");
-        } else if (decoded.roles[0] == "MODERATOR") {
-          navigate("/moderator");
+        } else if (decoded.roles[0] == "STUDENT") {
+          navigate("/student");
+        } else if (decoded.roles[0] == "PARENT") {
+          navigate("/parent");
         }
         console.log(decoded);
       } catch (error) {

@@ -37,6 +37,10 @@ export default function Navbar() {
           Blogs
         </Link>
 
+        <Link className="px-4 py-3" to="/feedback">
+          Feedback
+        </Link>
+
         <Link className="px-4 py-3" to="/login">
           <AccountCircleIcon />
         </Link>
