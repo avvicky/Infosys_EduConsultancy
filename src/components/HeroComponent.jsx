@@ -31,33 +31,35 @@ export default function HeroComponent() {
 
   return (
     <>
-      <Navbar />
-      <section className="relative  min-h-[90vh] flex items-center">
-        <div className="container mx-auto text-center px-4 ">
-          <h1 className="text-5xl text-customBrown font-bold mb-4 ">
-            Your Path to Educational Success
-          </h1>
-          <p className="text-lg mb-6 text-subheading">
-            Connect with our expert consultants for personalized guidance on
-            educational planning, training, and resources.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="#services"
-              className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-200"
-            >
-              Explore Services
-            </a>
-            <a
-              href="#contact"
-              className="bg-blue-500 text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-700 transition duration-200"
-            >
-              <Link to="/products">Get Started </Link>
-            </a>
+      <div className="bg-custom-image  bg-center bg-no-repeat">
+        <Navbar />
+        <section className="  min-h-[90vh] flex items-center">
+          <div className="container mx-auto text-center px-4 ">
+            <h1 className="text-5xl text-customBrown font-bold mb-4 ">
+              Your Path to Educational Success
+            </h1>
+            <p className="text-lg mb-6 text-subheading">
+              Connect with our expert consultants for personalized guidance on
+              educational planning, training, and resources.
+            </p>
+            <div className="flex justify-center space-x-4">
+              <a
+                href="#services"
+                className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-200"
+              >
+                Explore Services
+              </a>
+              <a
+                href="#contact"
+                className="bg-blue-500 text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-700 transition duration-200"
+              >
+                <Link to="/products">Get Started </Link>
+              </a>
+            </div>
           </div>
-        </div>
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-blue-800 to-transparent opacity-50 pointer-events-none"></div> */}
-      </section>
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-blue-800 to-transparent opacity-50 pointer-events-none"></div> */}
+        </section>
+      </div>
 
       {/* Introduction Section */}
       <section id="introduction " className="py-16 bg-gray-100">
@@ -65,15 +67,15 @@ export default function HeroComponent() {
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h2 className="text-3xl font-bold mb-4">Welcome to Our Platform</h2>
             <p className="text-gray-700 text-lg">
-              We are dedicated to providing high-quality educational resources to help you achieve your goals. 
+              We are dedicated to providing high-quality educational resources to help you achieve your goals.
               Whether you're starting your career or upskilling for the future, we have something for everyone!
             </p>
           </div>
           <div className="md:w-1/2 mx-2">
-            <img 
-              src="https://images.unsplash.com/photo-1498079022511-d15614cb1c02?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Introduction" 
-              className="rounded-lg shadow-lg" 
+            <img
+              src="https://images.unsplash.com/photo-1498079022511-d15614cb1c02?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Introduction"
+              className="rounded-lg shadow-lg"
             />
           </div>
         </div>
