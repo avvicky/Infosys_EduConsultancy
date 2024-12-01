@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
 export default function HeroComponent() {
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const courses = [
