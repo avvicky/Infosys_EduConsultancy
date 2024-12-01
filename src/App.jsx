@@ -15,6 +15,7 @@ import HeroComponent from "./components/HeroComponent";
 import Products from "./pages/Products";
 import Blogs from "./pages/Blogs"
 import About from "./pages/About"
+import Feedback from "./pages/Feedback";
 
 // import
 
@@ -30,6 +31,8 @@ function App() {
         <Route path="/contact" element={<HeroComponent />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/about" element={<About/>} />
+        <Route path="/feedback" element={<Feedback/>} />
+
         <Route
           path="/profile"
           element={
