@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import AdminPage from "./AdminPage";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AssignmentIcon from "@mui/icons-material/Assignment";
@@ -10,34 +11,7 @@ export default function Dashboard({ userRole }) {
   const renderDashboardContent = () => {
     switch (userRole) {
       case "admin":
-        return (
-          <>
-            <h1 className="text-4xl font-bold mb-4">Admin Dashboard</h1>
-            <p className="text-lg mb-6">
-              Manage users, view analytics, and configure settings.
-            </p>
-            <div className="flex justify-center space-x-4">
-              <Link
-                to="/manage-users"
-                className="bg-blue-500  py-2 px-6 rounded-full"
-              >
-                Manage Users
-              </Link>
-              <Link
-                to="/analytics"
-                className="bg-blue-600  py-2 px-6 rounded-full"
-              >
-                View Analytics
-              </Link>
-              <Link
-                to="/settings"
-                className="bg-blue-700  py-2 px-6 rounded-full"
-              >
-                Settings
-              </Link>
-            </div>
-          </>
-        );
+        return <AdminPage />;
       case "seller":
         return (
           <>

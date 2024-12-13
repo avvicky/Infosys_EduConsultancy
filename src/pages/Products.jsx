@@ -1,45 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
+import { getProducts } from "../services/productService";
 
 export default function Products() {
-  const products = [
-    {
-      title: "Career Counseling",
-      description:
-        "Expert guidance to help you choose the right career path and make informed decisions about your future.",
-      price: "₹500",
-    },
-    {
-      title: "Study Abroad Assistance",
-      description:
-        "Comprehensive support for applying to international universities, including application guidance and visa support.",
-      price: "₹1500",
-    },
-    {
-      title: "Test Preparation",
-      description:
-        "Personalized tutoring for competitive exams like SAT, GRE, and IELTS to help you achieve high scores.",
-      price: "₹1200",
-    },
-    {
-      title: "Academic Tutoring",
-      description:
-        "One-on-one or group tutoring sessions for various subjects to improve academic performance.",
-      price: "₹800",
-    },
-    {
-      title: "Skill Development Workshops",
-      description:
-        "Workshops focused on soft skills, technical skills, and other critical skills needed for career success.",
-      price: "₹700",
-    },
-    {
-      title: "Online Courses",
-      description:
-        "Access to exclusive online courses in a wide range of subjects, designed by industry experts.",
-      price: "₹1000",
-    },
-  ];
+  const [products, setProducts] = useState([]);
+  const fetchProducts = async () => {
+    const res = await getProducts();
+    setProducts(res.courses);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+    return () => {
+      setProducts([]);
+    };
+  }, []);
 
   return (
     <>
@@ -63,7 +38,7 @@ export default function Products() {
                 </h3>
                 <p className="text-gray-600 mb-4">{product.description}</p>
                 <div className="text-blue-600 font-semibold text-lg mb-4">
-                  {product.price}
+                  ₹ {product.price}
                 </div>
                 <button className="bg-blue-600  py-2 px-4 rounded hover:bg-blue-700 transition duration-200">
                   Learn More

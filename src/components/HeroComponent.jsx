@@ -3,26 +3,24 @@ import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
 export default function HeroComponent() {
-  
   const [isOpen, setIsOpen] = useState(false);
 
   const courses = [
     {
-      title: 'React for Beginners',
-      description: 'Learn React from scratch with hands-on projects.',
-      price: '₹800',
+      title: "React for Beginners",
+      description: "Learn React from scratch with hands-on projects.",
+      price: "₹800",
     },
     {
-      title: 'Mastering JavaScript',
-      description: 'Deep dive into advanced JavaScript concepts.',
-      price: '₹1000',
+      title: "Mastering JavaScript",
+      description: "Deep dive into advanced JavaScript concepts.",
+      price: "₹1000",
     },
     {
-      title: 'Python Programming',
-      description: 'Learn Python for data analysis and web development.',
-      price: '₹900',
+      title: "Python Programming",
+      description: "Learn Python for data analysis and web development.",
+      price: "₹900",
     },
-
   ];
 
   return (
@@ -63,8 +61,10 @@ export default function HeroComponent() {
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h2 className="text-3xl font-bold mb-4">Welcome to Our Platform</h2>
             <p className="text-gray-700 text-lg">
-              We are dedicated to providing high-quality educational resources to help you achieve your goals.
-              Whether you're starting your career or upskilling for the future, we have something for everyone!
+              We are dedicated to providing high-quality educational resources
+              to help you achieve your goals. Whether you're starting your
+              career or upskilling for the future, we have something for
+              everyone!
             </p>
           </div>
           <div className="md:w-1/2 mx-2">
@@ -80,7 +80,9 @@ export default function HeroComponent() {
       {/* Latest Courses Section */}
       <section id="courses" className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-6">Latest Courses</h2>
+          <h2 className="text-3xl font-bold text-center mb-6">
+            Latest Courses
+          </h2>
           <div className="flex justify-center px-10">
             <div className="flex space-x-4 ">
               {courses.map((course, index) => (
@@ -104,8 +106,19 @@ export default function HeroComponent() {
       {/* Footer Section */}
       <footer className="bg-gray-800 text-white py-6">
         <div className="container mx-auto px-4 text-center">
-          <p className="mb-2">&copy; 2024 Your Company Name. All rights reserved.</p>
-          <p>Follow us on <a href="#" className="text-blue-400 hover:underline">Twitter</a> | <a href="#" className="text-blue-400 hover:underline">LinkedIn</a></p>
+          <p className="mb-2">
+            &copy; 2024 Edu_Consultancy. All rights reserved.
+          </p>
+          <p>
+            Follow us on{" "}
+            <a href="#" className="text-blue-400 hover:underline">
+              Twitter
+            </a>{" "}
+            |{" "}
+            <a href="#" className="text-blue-400 hover:underline">
+              LinkedIn
+            </a>
+          </p>
         </div>
       </footer>
     </>
