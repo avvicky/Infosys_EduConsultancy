@@ -34,10 +34,10 @@ const Login = () => {
         const decoded = jwtDecode(token);
         if (decoded.roles[0] == "ADMIN") {
           navigate("/admin");
-        } else if (decoded.roles[0] == "USER") {
-          navigate("/user");
-        } else if (decoded.roles[0] == "MODERATOR") {
-          navigate("/moderator");
+        } else if (decoded.roles[0] == "STUDENT") {
+          navigate("/student");
+        } else if (decoded.roles[0] == "PARENT") {
+          navigate("/parent");
         }
         console.log(decoded);
       } catch (error) {
@@ -60,7 +60,7 @@ const Login = () => {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-black opacity-40"></div>
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-white px-8 text-center">
+          <div className="absolute inset-0 flex flex-col justify-center items-center  px-8 text-center">
             <h2 className="text-3xl font-bold">GetStarted</h2>
             <p className="mt-2">
               Join us today and start exploring new career and educational
@@ -122,7 +122,7 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-purple-600 text-white rounded-md font-semibold hover:bg-purple-700"
+              className="w-full px-4 py-2 bg-purple-600  rounded-md font-semibold hover:bg-purple-700"
             >
               Login
             </button>

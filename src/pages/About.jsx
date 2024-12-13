@@ -1,19 +1,17 @@
-import React, {useState} from 'react';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
-import Navbar from '../components/Navbar';
+import React, { useState } from "react";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import MailIcon from "@mui/icons-material/Mail";
+import MenuIcon from "@mui/icons-material/Menu";
+import Navbar from "../components/Navbar";
 
 export default function About() {
-
   const [isOpen, setIsOpen] = useState(false);
 
-  
   return (
     <>
-         <Navbar/>
+      <Navbar />
 
     <section id="about" className="py-16   min-h-[90vh]">
       <div className="container mx-auto px-4 text-center">
@@ -46,5 +44,5 @@ export default function About() {
       </div>
     </section>
     </>
-  )
+  );
 }
