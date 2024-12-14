@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Feedback from "./pages/Feedback";
 import Dashboard from "./pages/Dashboard";
 import BlogDetail from "./pages/BlogDetail";
+import ManageProducts from "./pages/ManageProducts";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/blogs/:id" element={<BlogDetail />} />
+          <Route path="/forgot-password" element={<BlogDetail />} />
           <Route
             path="/profile"
             element={
@@ -39,6 +41,22 @@ function App() {
             element={
               <ProtectedRoute roles={["ADMIN"]}>
                 <Dashboard userRole={"admin"} />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/manage-blogs"
+            element={
+              <ProtectedRoute roles={["ADMIN"]}>
+                <Dashboard userRole={"admin"} />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/manage-products"
+            element={
+              <ProtectedRoute roles={["ADMIN"]}>
+                <ManageProducts />
               </ProtectedRoute>
             }
           />

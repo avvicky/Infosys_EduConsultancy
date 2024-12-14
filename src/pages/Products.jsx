@@ -41,7 +41,7 @@ export default function Products() {
                   ₹ {product.price}
                 </div>
                 <button className="bg-blue-600  py-2 px-4 rounded hover:bg-blue-700 transition duration-200">
-                  Learn More
+                  Entroll
                 </button>
               </div>
             ))}
