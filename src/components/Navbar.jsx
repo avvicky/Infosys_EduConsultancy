@@ -36,25 +36,25 @@ export default function Navbar() {
         />
       </div>
       <div className="col-span-2 flex items-center justify-end text-nav">
-        <Link className="px-4 py-3" to="/">
+        <Link className="px-4 py-3 hover:pb-5 " to="/">
           Home
         </Link>
-        <Link className="px-4 py-3" to="/about">
+        <Link className="px-4 py-3 hover:pb-5 ease-in duration-200" to="/about">
           About
         </Link>
 
-        <Link className="px-4 py-3" to="/products">
+        <Link className="px-4 py-3 hover:pb-5 ease-in duration-200" to="/products">
           Products
         </Link>
-        <Link className="px-4 py-3" to="/blogs">
+        <Link className="px-4 py-3 hover:pb-5 ease-in duration-200" to="/blogs">
           Blogs
         </Link>
 
-        <Link className="px-4 py-3" to="/feedback">
+        <Link className="px-4 py-3 hover:pb-5 ease-in duration-200" to="/feedback">
           Feedback
         </Link>
         {token ? (
-          <Link className="px-4 py-3" to="/profile">
+          <Link className="px-4 py-3 hover:pb-5 ease-in duration-200" to="/profile">
             <AccountCircleIcon />
           </Link>
         ) : (
@@ -62,7 +62,7 @@ export default function Navbar() {
             onClick={() => {
               navigate("/login");
             }}
-            className="px-4 py-3 rounded-md font-semibold mx-4 text-white bg-subtitle hover:bg-gray-700"
+            className="px-4 py-3  rounded-md font-semibold mx-4 text-white bg-subtitle hover:bg-productsBg"
           >
             Login
           </button>
@@ -71,13 +71,13 @@ export default function Navbar() {
         {token && (
           <button
             onClick={logout}
-            className="px-4 py-3 rounded-md font-semibold mx-4 text-white bg-subtitle hover:bg-gray-700"
+            className="px-4 py-3 rounded-md font-semibold mx-4 text-white bg-subtitle hover:bg-productsBg"
           >
             LogOut
           </button>
         )}
 
-        <button className="px-4 py-3 rounded-md font-semibold mx-4 text-white bg-subtitle hover:bg-gray-700">
+        <button className="px-4 py-3 rounded-md font-semibold mx-4 text-white bg-subtitle hover:bg-productsBg">
           Sign Up
         </button>
         {/* <button className="px-4">

@@ -98,7 +98,7 @@ export default function HeroComponent() {
               {courses.map((course, index) => (
                 <div
                   key={index}
-                  className="bg-productsBg shadow-2xl shadow-gray-600  text-white rounded-lg shadow-lg p-6 min-w-[250px] flex-shrink-0"
+                  className="bg-productsBg hover:shadow-2xl hover:shadow-gray-600 ease-in duration-200 text-white rounded-lg shadow-lg p-6 min-w-[250px] flex-shrink-0"
                 >
                   <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
                   <p className="text-sm mb-4">{course.description}</p>
