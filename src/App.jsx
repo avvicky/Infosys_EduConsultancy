@@ -16,7 +16,7 @@ import ManageProducts from "./pages/ManageProducts";
 function App() {
   return (
     <Router>
-      <div className="bg-custom-image  bg-center bg-no-repeat  min-h-[100vh] w-full">
+      <div className="bg-white  bg-center bg-no-repeat  min-h-[100vh] w-full">
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

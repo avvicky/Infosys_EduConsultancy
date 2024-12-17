@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import mainImg from "../assets/mainImg.png";
 
 export default function HeroComponent() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,21 +26,21 @@ export default function HeroComponent() {
 
   return (
     <>
-      <div className="bg-custom-image  bg-center bg-no-repeat">
+      <div className="bg-white  bg-center bg-no-repeat">
         <Navbar />
         <section className="  min-h-[90vh] flex items-center">
-          <div className="container mx-auto text-center px-4 ">
-            <h1 className="text-5xl text-customBrown font-bold mb-4 ">
+          <div className="w-50  container mx-auto px-10 ">
+            <h1 className=" text-7xl text-title font-bold mb-4 ">
               Your Path to Educational Success
             </h1>
-            <p className="text-lg mb-6 text-subheading">
+            <p className="text-lg mb-6 text-subtitle font-semibold">
               Connect with our expert consultants for personalized guidance on
               educational planning, training, and resources.
             </p>
-            <div className="flex justify-center space-x-4">
+            <div className="flex justify-start space-x-4">
               <a
                 href="#services"
-                className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-200"
+                className="bg-btnBg text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-200"
               >
                 Explore Services
               </a>
@@ -51,6 +52,14 @@ export default function HeroComponent() {
               </a>
             </div>
           </div>
+
+          <div className="w-50 px-5">
+            <img
+              src={mainImg}
+              alt="My Asset"
+              style={{ width: "90%", height: "50%" }}
+            />
+          </div>
           {/* <div className="absolute inset-0 bg-gradient-to-t from-blue-800 to-transparent opacity-50 pointer-events-none"></div> */}
         </section>
       </div>
@@ -58,7 +67,15 @@ export default function HeroComponent() {
       {/* Introduction Section */}
       <section id="introduction " className="py-16 bg-gray-100">
         <div className="container mx-auto flex flex-col md:flex-row items-center px-10">
-          <div className="md:w-1/2 mb-8 md:mb-0">
+          <div className="md:w-1/2 mx-2">
+            <img
+              src="https://images.unsplash.com/photo-1498079022511-d15614cb1c02?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Introduction"
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+
+          <div className="md:w-1/2 mb-8 md:mb-0 px-5">
             <h2 className="text-3xl font-bold mb-4">Welcome to Our Platform</h2>
             <p className="text-gray-700 text-lg">
               We are dedicated to providing high-quality educational resources
@@ -66,13 +83,6 @@ export default function HeroComponent() {
               career or upskilling for the future, we have something for
               everyone!
             </p>
-          </div>
-          <div className="md:w-1/2 mx-2">
-            <img
-              src="https://images.unsplash.com/photo-1498079022511-d15614cb1c02?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Introduction"
-              className="rounded-lg shadow-lg"
-            />
           </div>
         </div>
       </section>
@@ -88,7 +98,7 @@ export default function HeroComponent() {
               {courses.map((course, index) => (
                 <div
                   key={index}
-                  className="bg-blue-600 text-white rounded-lg shadow-lg p-6 min-w-[250px] flex-shrink-0"
+                  className="bg-productsBg shadow-2xl shadow-gray-600  text-white rounded-lg shadow-lg p-6 min-w-[250px] flex-shrink-0"
                 >
                   <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
                   <p className="text-sm mb-4">{course.description}</p>
