@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <div className="bg-custom-image  bg-center bg-no-repeat bg-fixed  min-h-[100vh] w-full">
+        <div className="bg-white  bg-center bg-no-repeat bg-fixed  min-h-[100vh] w-full">
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />

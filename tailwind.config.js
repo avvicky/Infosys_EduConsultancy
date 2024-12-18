@@ -35,9 +35,10 @@ module.exports = {
       },
       colors: {
         customBrown: '#E6E6FA',
-        title: '#F6C358',
-        nav: '#3B0B39',
-        subheading: '#D3D3D3' // Define your custom color
+        title: '#284b63',
+        productsBg: '#3C6E71',
+        subtitle : '#353535',
+        btnBg: '#D9D9D9' // Define your custom color
       },
     },
   },
