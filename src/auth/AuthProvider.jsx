@@ -1,44 +1,62 @@
-import axios from "axios";
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
-const AuthProvider = ({ children }) => {
-  // State to hold the authentication token
-  const [token, setToken_] = useState(localStorage.getItem("token"));
+export const AuthProvider = ({ children }) => {
+  const navigate = useNavigate();
+  const [authTokens, setAuthTokens] = useState({
+    accessToken: localStorage.getItem("accessToken"),
+    refreshToken: localStorage.getItem("refreshToken"),
+  });
 
-  // Function to set the authentication token
-  const setToken = (newToken) => {
-    setToken_(newToken);
+  const setTokens = (accessToken, refreshToken) => {
+    setAuthTokens({ accessToken, refreshToken });
+    localStorage.setItem("accessToken", accessToken);
+    localStorage.setItem("refreshToken", refreshToken);
+  };
+
+  const handleLogout = () => {
+    setAuthTokens(null);
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    navigate("/login");
   };
 
   useEffect(() => {
-    if (token) {
-      axios.defaults.headers.common["Authorization"] = "Bearer " + token;
-      localStorage.setItem('token',token);
-    } else {
-      delete axios.defaults.headers.common["Authorization"];
-      localStorage.removeItem('token')
-    }
-  }, [token]);
+    const accessExpiration = 3600000; // 1 hour
+    const refreshExpiration = 604800000; // 7 days
 
-  // Memoized value of the authentication context
-  const contextValue = useMemo(
-    () => ({
-      token,
-      setToken,
-    }),
-    [token]
-  );
+    // Refresh access token before expiration
+    const accessTimer = setTimeout(async () => {
+      try {
+        const response = await API.post("/auth/refresh", {
+          refreshToken: authTokens.refreshToken,
+        });
+        setTokens(response.data.accessToken, authTokens.refreshToken);
+      } catch {
+        console.error("Failed to refresh token. Logging out.");
+        handleLogout();
+      }
+    }, accessExpiration - 60000); // Refresh 1 min before expiry
 
-  // Provide the authentication context to the children components
+    // Logout on refresh token expiration
+    const refreshTimer = setTimeout(() => {
+      console.error("Refresh token expired. Logging out.");
+      handleLogout();
+    }, refreshExpiration);
+
+    return () => {
+      clearTimeout(accessTimer);
+      clearTimeout(refreshTimer);
+    };
+  }, [authTokens]);
+
   return (
-    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ authTokens, setTokens, handleLogout }}>
+      {children}
+    </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
-
-export default AuthProvider;
+export const useAuth = () => useContext(AuthContext);

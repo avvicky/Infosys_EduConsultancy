@@ -7,6 +7,7 @@ export const getBlogs = async () => {
   if (!response.ok) throw new Error("Failed to fetch blogs");
 
   const data = await response.json();
+  console.log(data);
   return data;
 };
 export const getBlogById = async (id) => {

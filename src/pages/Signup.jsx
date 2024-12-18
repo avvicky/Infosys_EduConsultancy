@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signUp, getUser } from "../services/authService";
+import { useAuth } from "../auth/AuthProvider";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,6 +15,7 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   });
+  const [setTokens] = useAuth();
   const [err, setErr] = useState("");
 
   const navigate = useNavigate();
@@ -61,9 +63,9 @@ const Signup = () => {
     const { confirmPassword, ...credentials } = inputs; // Exclude confirmPassword for API
 
     try {
-      await signUp(credentials);
-      // setShowPopup(true);
-      const token = localStorage.getItem("token");
+      const response = await API.post("/auth/signUp", credentials);
+      const { accessToken, refreshToken } = response.data;
+      setTokens(accessToken, refreshToken);
       navigate("/student");
       try {
         const decoded = jwtDecode(token);

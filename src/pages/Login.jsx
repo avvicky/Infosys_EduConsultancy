@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../services/authService";
 import { jwtDecode } from "jwt-decode";
+import { useAuth } from "../auth/AuthProvider";
+import API from "../utils/api";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [err, setErr] = useState(false);
+  const { setTokens } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,19 +29,20 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login({ email, password });
-      const token = localStorage.getItem("token"); // Retrieve the token from local storage
+      const response = await API.post("/auth/login", { email, password });
+      const { accessToken, refreshToken } = response.data;
+      setTokens(accessToken, refreshToken);
 
       try {
-        const decoded = jwtDecode(token);
+        const decoded = jwtDecode(accessToken);
+        console.log(decoded);
         if (decoded.roles[0] == "ADMIN") {
           navigate("/admin");
         } else if (decoded.roles[0] == "STUDENT") {
           navigate("/student");
         } else if (decoded.roles[0] == "PARENT") {
-          navigate("/parent");
+          navigate("/student");
         }
-        console.log(decoded);
       } catch (error) {
         console.error("Error decoding JWT:", error);
       }
