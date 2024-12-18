@@ -78,8 +78,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="w-[800px] bg-white rounded-lg shadow-lg overflow-hidden flex">
+    <div className="bg-title flex items-center justify-center min-h-screen">
+      <div className="w-[800px] bg-white rounded-lg shadow-2xl shadow-indigo-500/40 overflow-hidden flex">
         {/* Left Side - Signup Form */}
         <div className="w-1/2 p-8">
           <h2 className="text-4xl font-semibold text-purple-600 mb-4">
@@ -160,7 +160,7 @@ const Signup = () => {
             </div>
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-purple-600  rounded-md font-semibold hover:bg-purple-700"
+              className="w-full px-4 py-2 bg-purple-600 text-white rounded-md font-semibold hover:bg-purple-700"
             >
               Register
             </button>
@@ -176,7 +176,7 @@ const Signup = () => {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-black opacity-40"></div>
-          <div className="absolute inset-0 flex flex-col justify-center items-center  px-8 text-center">
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white  px-8 text-center">
             <h2 className="text-3xl font-bold">Reconnect</h2>
             <p className="mt-2">
               Welcome back! Log in to continue your journey with us

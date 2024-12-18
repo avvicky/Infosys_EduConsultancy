@@ -11,6 +11,7 @@ export const getProducts = async () => {
   const data = await response.json();
   return data;
 };
+
 export const getFullProducts = async () => {
   const token = localStorage.getItem("token");
   const response = await fetch("http://localhost:8080/admin/courses", {
