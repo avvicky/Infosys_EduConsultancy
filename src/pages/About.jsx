@@ -79,28 +79,28 @@ export default function About() {
         </section>
 
         {/* Values Section */}
-        <section id="values" className="py-16 bg-gray-100">
-          <div className="container mx-auto px-10">
+        <section id="values" className="py-16 bg-gray-400">
+          <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-6">Our Values</h2>
-            <div className="flex flex-wrap justify-center gap-8">
-              <div className="bg-white shadow-md rounded-lg p-6 max-w-sm">
+            <div className="flex  justify-center gap-8">
+              <div className="bg-white shadow-md rounded-lg p-4 max-w-sm">
                 <h3 className="text-xl font-semibold mb-2">Integrity</h3>
                 <p className="text-gray-700 text-sm">
-                  We uphold the highest standards of integrity in all our actions.
+                We uphold the highest standards of integrity in all our actions. Honesty, transparency, and ethical behavior are the cornerstones of our approach to building lasting relationships with our clients, partners, and community.
                 </p>
               </div>
 
-              <div className="bg-white shadow-md rounded-lg p-6 max-w-sm">
+              <div className="bg-white shadow-md rounded-lg p-4 max-w-sm">
                 <h3 className="text-xl font-semibold mb-2">Excellence</h3>
                 <p className="text-gray-700 text-sm">
-                  We strive for excellence in every service we provide.
+                We strive for excellence in every service we provide. Our commitment to continuous improvement and attention to detail ensures that we consistently exceed expectations and deliver unmatched value.
                 </p>
               </div>
 
-              <div className="bg-white shadow-md rounded-lg p-6 max-w-sm">
+              <div className="bg-white shadow-md rounded-lg p-4 max-w-sm">
                 <h3 className="text-xl font-semibold mb-2">Innovation</h3>
                 <p className="text-gray-700 text-sm">
-                  We embrace innovation to deliver better solutions.
+                We embrace innovation to deliver better solutions. By fostering a culture of creativity and forward-thinking, we aim to address challenges with cutting-edge ideas and advanced technologies to shape a better future.
                 </p>
               </div>
             </div>
