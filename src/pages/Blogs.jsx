@@ -24,9 +24,10 @@ export default function Blogs() {
   return (
     <>
       <Navbar />
-      <section className="py-12">
+      <section className="py-12 min-h-[71vh]">
+        
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-semibold text-center mb-8 text-white font-cinzel">
+          <h2 className="text-4xl font-semibold text-center mb-8 text-subtitile font-cinzel">
             Insights
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -54,7 +55,22 @@ export default function Blogs() {
       </section>
 
       {/* Footer with "Create Your Blog" Button */}
-      <footer className="py-6 text-center"></footer>
+      {/* Footer Section */}
+      <footer className="bg-gray-800 text-white py-6">
+          <div className="container mx-auto px-4 text-center">
+            <p className="mb-2">&copy; 2024 Edu_Consultancy. All rights reserved.</p>
+            <p>
+              Follow us on {" "}
+              <a href="#" className="text-blue-400 hover:underline">
+                Twitter
+              </a>{" "}
+              | {" "}
+              <a href="#" className="text-blue-400 hover:underline">
+                LinkedIn
+              </a>
+            </p>
+          </div>
+        </footer>
 
       {/* Popup Modal for Blog Creation */}
       {/* {isCreateBlogOpen && (

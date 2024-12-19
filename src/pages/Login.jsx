@@ -53,8 +53,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen ">
-      <div className="w-[800px] bg-white rounded-lg shadow-lg overflow-hidden flex">
+    <div className="bg-title   bg-no-repeat flex items-center justify-center min-h-screen ">
+      <div className="w-[800px] bg-white rounded-lg shadow-2xl shadow-indigo-500/40 overflow-hidden flex">
         {/* Left Side - Image and Welcome Text */}
         <div className="w-1/2 bg-purple-200 relative">
           <img
@@ -63,8 +63,8 @@ const Login = () => {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-black opacity-40"></div>
-          <div className="absolute inset-0 flex flex-col justify-center items-center  px-8 text-center">
-            <h2 className="text-3xl font-bold">GetStarted</h2>
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white px-8 text-center">
+            <h2 className="text-3xl font-bold">Get Started</h2>
             <p className="mt-2">
               Join us today and start exploring new career and educational
               opportunities.
@@ -125,7 +125,7 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-purple-600  rounded-md font-semibold hover:bg-purple-700"
+              className="w-full px-4 py-2 bg-purple-600 text-white  rounded-md font-semibold hover:bg-purple-700"
             >
               Login
             </button>
